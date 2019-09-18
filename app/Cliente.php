@@ -18,6 +18,10 @@ class Cliente extends Model
         return $this->hasMany('App\Documento');
     }
 
+    public function emprestimos() {
+        return $this->hasMany('App\Emprestimo');
+    }
+
     //Funções
     public function getRg() {
         return $this->documentos()->where('tipo', 'rg')->first();

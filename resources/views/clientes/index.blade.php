@@ -6,7 +6,8 @@
 
         <div class="col-md-12">
             <div class="text-right">
-                <a href="{{url('clientes/create')}}" class="btn btn-success">Novo</a>
+                <a href="{{url('clientes/create')}}" class="btn btn-success">Novo Cliente</a>
+                <a href="{{url('emprestimos/create')}}" class="btn btn-primary">Novo Empréstimo</a>
             </div>
         </div>
 
@@ -20,7 +21,7 @@
                                 <th>Nome</th>
                                 <th>RG</th>
                                 <th>CPF</th>
-                                <th colspan='2'>Ações</th>
+                                <th colspan='3'>Ações</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -29,6 +30,7 @@
                                     <td>{{$cliente->nome}}</td>
                                     <td>{{$cliente->getRg()->numero}}</td>
                                     <td>{{$cliente->getCpf()->numero}}</td>
+                                    <td><a href="{{url('clientes/'.$cliente->id.'/emprestimos')}}" class="btn btn-info">Empréstimos</td>
                                     <td><a href="{{url('clientes/'.$cliente->id.'/edit')}}" class="btn btn-warning">Editar</td>
                                     <td>
                                         <form action="{{url('clientes', [$cliente->id])}}" method="POST">

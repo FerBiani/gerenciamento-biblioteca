@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\{Cliente, Documento};
+use App\Http\Requests\ClienteRequest;
 use DB;
 
 class ClienteController extends Controller
@@ -47,7 +48,7 @@ class ClienteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ClienteRequest $request)
     {
 
         DB::beginTransaction();

@@ -62,6 +62,7 @@
     <script type="text/javascript" src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/sweetalert.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery.mask.min.js')}}"></script>
     <script>
         const Toast = Swal.mixin({
             toast: true,
@@ -76,6 +77,10 @@
                 title: msg
             })
         }
+
+        //mascaras
+        $('.data').mask('99/99/9999');
+        $('.cpf').mask('999.999.999-99')
     </script>
     @yield('scripts')
 </body>
